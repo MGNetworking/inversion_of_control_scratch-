@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c0ed359-da9d-460b-9722-07c70cbf2659" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/config.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/myProduit/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/myProduit/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/myProduit/controller/IController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/myProduit/controller/IController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/myProduit/controller/IfConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/myProduit/controller/IfConsole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/myProduit/controller/IfGraphique.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/myProduit/controller/IfGraphique.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/myProduit/dao/ClientData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/myProduit/dao/ClientDataMySQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/myProduit/dao/ClientDataAdvence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/myProduit/dao/ClientDataPostgres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/myProduit/dao/IClientData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/myProduit/dao/IClientData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/myProduit/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/myProduit/service/ClientServiceDefault.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/myProduit/service/ClientServicedefault.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/myProduit/service/ClientServicePrefix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/myProduit/service/IClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/myProduit/service/IClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/myProduit/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/myProduit/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/myProduit/controller/IfConsole.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/myProduit/controller/IfConsole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/myProduit/controller/IfGraphique.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/myProduit/controller/IfGraphique.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/myProduit/dao/ClientData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/myProduit/service/ClientService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -43,8 +25,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="160">
-                <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+              <first_editor relative-caret-position="120">
+                <caret line="6" column="70" selection-start-line="6" selection-start-column="70" selection-end-line="6" selection-end-column="70" />
               </first_editor>
               <second_editor />
             </state>
@@ -206,12 +188,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1609010636003</updated>
-      <workItem from="1609010640739" duration="20456000" />
+      <workItem from="1609010640739" duration="20583000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20456000" />
+    <option name="totallyTimeSpent" value="20583000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -437,8 +419,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="160">
-            <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <first_editor relative-caret-position="120">
+            <caret line="6" column="70" selection-start-line="6" selection-start-column="70" selection-end-line="6" selection-end-column="70" />
           </first_editor>
           <second_editor />
         </state>
