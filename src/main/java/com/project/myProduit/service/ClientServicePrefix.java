@@ -3,6 +3,7 @@ package com.project.myProduit.service;
 import com.project.myProduit.dao.IClientData;
 import com.project.myProduit.metierEntity.Client;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 
 /**
  * Cette classe permet la gestion de numéro de facture avec prefix
@@ -13,7 +14,9 @@ public class ClientServicePrefix implements IClientService {
     private IClientData clientData;
 
     // numero de facture
+    @Value("${service.countNumber}")
     private long countNumber ;
+    @Value("${service.prefix}")
     private String prefix ;
 
 
