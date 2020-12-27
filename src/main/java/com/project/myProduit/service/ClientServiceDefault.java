@@ -9,12 +9,20 @@ import com.project.myProduit.metierEntity.Client;
 public class ClientServiceDefault implements IClientService {
 
     // numero de facture
-    private static long countNumber = 0L;
+    private long countNumber ;
     private IClientData clientData;
 
     public void createfacture(Client client) {
         client.setNumber(String.valueOf(++countNumber));
         clientData.create(client);
+    }
+
+    public long getCountNumber() {
+        return countNumber;
+    }
+
+    public void setCountNumber(long countNumber) {
+        this.countNumber = countNumber;
     }
 
     public IClientData getClientData() {

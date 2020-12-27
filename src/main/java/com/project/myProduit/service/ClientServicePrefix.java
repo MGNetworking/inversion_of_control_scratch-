@@ -9,13 +9,29 @@ import com.project.myProduit.metierEntity.Client;
 public class ClientServicePrefix implements IClientService {
 
     // numero de facture
-    private static long countNumber = 0L;
-    private final static String prefix = "__NBC_";
+    private long countNumber ;
+    private String prefix ;
     private IClientData clientData;
 
     public void createfacture(Client client) {
         client.setNumber(prefix+(++countNumber));
         clientData.create(client);
+    }
+
+    public long getCountNumber() {
+        return countNumber;
+    }
+
+    public void setCountNumber(long countNumber) {
+        this.countNumber = countNumber;
+    }
+
+    public String getPrefix() {
+        return prefix;
+    }
+
+    public void setPrefix(String prefix) {
+        this.prefix = prefix;
     }
 
     public IClientData getClientData() {

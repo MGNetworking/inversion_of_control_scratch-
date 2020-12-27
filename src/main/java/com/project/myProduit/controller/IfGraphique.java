@@ -5,13 +5,13 @@ import com.project.myProduit.service.IClientService;
 /**
  * Cette permet le controle de l'application avec un navigateur
  */
-public class IfGraphique {
+public class IfGraphique implements IController {
 
     IClientService clientService ;
 
     public void createInterfaceControl(){
         //
-        System.out.println("interface graphique activer, ici page web en fonction");
+        System.out.println("interface graphique activer, page web pas d'implentation");
     }
 
     public IClientService getClientService() {

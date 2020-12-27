@@ -21,8 +21,8 @@ public class ClientDataPostgres implements IClientData {
 
         // ici on peut creat l'acces au données avec jdbc
         clientList.add(client);
-        System.out.println("Postgres : Ajout du client : " + client.getNumber()+
-                "\ndu nom de : " + client.getCustomerName() );
+        System.out.println("Postgres : Ajout de la facture : " + client.getNumber()+
+                "\nau client : " + client.getCustomerName() );
     }
 
     @Override

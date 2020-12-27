@@ -5,18 +5,16 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-
-    <bean id="ID_servicePrefix" class="com.project.myProduit.service.ClientServiceDefault">
+    <bean id="ID_servicePrefix" class="com.project.myProduit.service.ClientServicePrefix">
         <property name="clientData" ref="ID_postgres"/>
+        <property name="countNumber" value="0"/>
+        <property name="prefix" value="__NBC__"/>
     </bean>
 
     <bean id="ID_console" class="com.project.myProduit.controller.IfConsole">
         <property name="clientService" ref="ID_servicePrefix"/>
     </bean>
 
-
     <bean id="ID_postgres" class="com.project.myProduit.dao.ClientDataPostgres"/>
-
-    
 
 </beans>

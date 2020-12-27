@@ -19,8 +19,8 @@ public class ClientDataMySQL implements IClientData {
 
     public void create(Client client){
         clientList.add(client);
-        System.out.println("MySQL : Ajout du client : " + client.getNumber()+
-                "\ndu nom de : " + client.getCustomerName() );
+        System.out.println("MySQL : Ajout de la facture : " + client.getNumber()+
+                "\nau client : " + client.getCustomerName() );
     }
 
     @Override
