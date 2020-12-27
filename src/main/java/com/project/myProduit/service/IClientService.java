@@ -6,5 +6,4 @@ import com.project.myProduit.metierEntity.Client;
 public interface IClientService {
 
     void createfacture(Client client);
-    void setClientData(IClientData clientData);
 }

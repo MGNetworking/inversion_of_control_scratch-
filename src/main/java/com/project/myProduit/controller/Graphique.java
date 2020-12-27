@@ -1,12 +1,14 @@
 package com.project.myProduit.controller;
 
 import com.project.myProduit.service.IClientService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Cette permet le controle de l'application avec un navigateur
  */
-public class IfGraphique implements IController {
+public class Graphique implements IController {
 
+    @Autowired
     IClientService clientService ;
 
     public void createInterfaceControl(){
@@ -18,7 +20,5 @@ public class IfGraphique implements IController {
         return clientService;
     }
 
-    public void setClientService(IClientService clientService) {
-        this.clientService = clientService;
-    }
+
 }

@@ -25,24 +25,28 @@ puis de gardés en mémoire tout les composant instancier pendant la durée de l
 Ces composants sont gardé sous la forme de graphe (structure de données) pour matérialisé les 
 dépendances entre les composants
 
-#### Exemple de configuration :
+#### Exemple de configuration par anotation :
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-    http://www.springframework.org/schema/beans/spring-beans.xsd">
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:annotation-config/>
 
-    <bean id="ID_servicePrefix" class="com.project.myProduit.service.ClientServiceDefault">
-        <property name="clientData" ref="ID_postgres"/>
+    <bean class="com.project.myProduit.service.ClientServicePrefix">
+        <property name="countNumber" value="0"/>
+        <property name="prefix" value="__NBC__"/>
     </bean>
 
-    <bean id="ID_console" class="com.project.myProduit.controller.IfConsole">
-        <property name="clientService" ref="ID_servicePrefix"/>
+    <bean class="com.project.myProduit.controller.Console">
     </bean>
-    
-    <bean id="ID_postgres" class="com.project.myProduit.dao.ClientDataPostgres"/>
+
+    <bean class="com.project.myProduit.dao.ClientDataPostgres"/>
 
 </beans>
 ```

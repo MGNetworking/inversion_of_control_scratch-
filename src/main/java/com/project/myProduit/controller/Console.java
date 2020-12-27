@@ -2,6 +2,7 @@ package com.project.myProduit.controller;
 
 import com.project.myProduit.metierEntity.Client;
 import com.project.myProduit.service.IClientService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Scanner;
 
@@ -9,8 +10,9 @@ import java.util.Scanner;
  * Cette classe permet le controle de l'application avec
  * la console
  */
-public class IfConsole implements IController {
+public class Console implements IController {
 
+    @Autowired
     IClientService clientService ;
 
     public void createInterfaceControl() {
@@ -31,7 +33,5 @@ public class IfConsole implements IController {
         return clientService;
     }
 
-    public void setClientService(IClientService clientService) {
-        this.clientService = clientService;
-    }
+
 }
