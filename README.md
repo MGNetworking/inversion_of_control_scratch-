@@ -1,12 +1,12 @@
 ## Projet Scratch
 Le but de ce projet est de permettre la compréhension des mécanismes d'inversion de contrôle et
-l'injection des dépendance en java avec le Framework Spring.
+l'injection des dépendances en java avec le Framework Spring.
 
-Pour mettre en place le conteneur leger de spring (Spring Lightweight container), un fichier de 
+Pour mettre en place le conteneur léger de Spring (Spring Lightweight container), un fichier de 
 configuration de type "xml" va permettre la création des instances et d'injecter les dépendances 
 au démarrage de l'application.
 
-On appelle ce mécanisme l'inversion de contrôle. Dans le repertoire resources, vous allez trouver 
+On appelle ce mécanisme l'inversion de contrôle. Dans le répertoire « resources », vous allez trouver 
 le fichier "applicationContext.xml" qui permet de créer au démarrage de l'application la création 
 puis l'injection des composant.
 
@@ -20,9 +20,9 @@ Pour utilisé cette configuration il faut importer la dépendance suivant :
 </dependency>
 ```
 
-Cette bibliothéque via le fichier applicationContext.xml, permet de charger les classes ciblés 
-puis de gardés en mémoire tout les composant instancier pendant la durée de l'application.
-Ces composants sont gardé sous la forme de graphe (structure de données) pour matérialisé les 
+Cette bibliothèque via le fichier applicationContext.xml, permet de charger les classes ciblés 
+puis de gardés en mémoire tous les composant instancier pendant la durée de l'application.
+Ces composants sont gardé sous la forme de graphe (structure de données) pour matérialiser les 
 dépendances entre les composants
 
 #### Exemple de configuration par anotation :
@@ -50,4 +50,9 @@ dépendances entre les composants
 
 </beans>
 ```
+### NB
+Spring n'utilise pas les setters si l'annotation est placer sur la propriété 
+Il est possible d'ajouter l'annotation autowired sur le setter, pour forcer 
+Spring a passer par le setter lorsque de l'injection de dépendance.
+
 
