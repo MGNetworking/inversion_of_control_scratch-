@@ -1,3 +1,0 @@
-com.project.myProduit.controller.IfConsole
-com.project.myProduit.service.ClientServiceDefault
-com.project.myProduit.dao.ClientDataPostgres

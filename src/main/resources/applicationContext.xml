@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="ID_servicePrefix" class="com.project.myProduit.service.ClientServiceDefault">
+        <property name="clientData" ref="ID_postgres"/>
+    </bean>
+
+    <bean id="ID_console" class="com.project.myProduit.controller.IfConsole">
+        <property name="clientService" ref="ID_servicePrefix"/>
+    </bean>
+
+    <bean id="ID_postgres" class="com.project.myProduit.dao.ClientDataPostgres"/>
+
+</beans>
