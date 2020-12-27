@@ -1,18 +1,20 @@
 package com.project.myProduit.service;
 
-import com.project.myProduit.dao.ClientData;
 import com.project.myProduit.dao.IClientData;
 import com.project.myProduit.metierEntity.Client;
 
-public class ClientService implements IClientService {
+/**
+ * Cette classe permet la gestion de numéro de facture avec prefix
+ */
+public class ClientServicePrefix implements IClientService {
 
-    // variable de décompte
+    // numero de facture
     private static long countNumber = 0L;
-
+    private final static String prefix = "__NBC_";
     private IClientData clientData;
 
     public void createfacture(Client client) {
-        client.setNumber(String.valueOf(++countNumber));
+        client.setNumber(prefix+(++countNumber));
         clientData.create(client);
     }
 

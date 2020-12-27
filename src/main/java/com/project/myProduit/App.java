@@ -1,15 +1,23 @@
 package com.project.myProduit;
 
+import com.project.myProduit.controller.IController;
 import com.project.myProduit.controller.IfConsole;
 import com.project.myProduit.controller.IfGraphique;
-import com.project.myProduit.dao.ClientData;
-import com.project.myProduit.dao.ClientDataAdvence;
+import com.project.myProduit.dao.ClientDataMySQL;
+import com.project.myProduit.dao.ClientDataPostgres;
 import com.project.myProduit.dao.IClientData;
-import com.project.myProduit.service.ClientService;
-import com.project.myProduit.service.ClientServicedefault;
+import com.project.myProduit.service.ClientServiceDefault;
+import com.project.myProduit.service.ClientServicePrefix;
 import com.project.myProduit.service.IClientService;
+import sun.security.ec.point.ProjectivePoint;
 
-import java.util.Scanner;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.regex.Pattern;
 
 /*
  * Ce Projet de type scratch donne un aprecut aperçut de la gestion des
@@ -23,45 +31,52 @@ public class App {
      */
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Selection interface");
+        Scanner scName = null;
+        List<String> listClass = new ArrayList<>();
 
-        System.out.println("Enter 1 pour console");
-        System.out.println("Enter 2 pour graphique");
 
-        int choix = sc.nextInt();
+            try {
+                String name ;
+                File file  = new File(String.valueOf(Paths.get("resources/config.txt")));
+                scName = new Scanner(file);
 
-        /*En fonction du choix fait par l'utilisateur,
-        * Le choix console ou interface graphique sera sélectionné.
-        * Les dépendance seront créer. Cela permet d'avoir un flexibilité
-        * entre l'application est les besoins du client utilisateur .
-         */
-        if (choix == 1) {
-            IfConsole ifConsole = new IfConsole();
-            ClientService clientService = new ClientService();
-            ClientData clientData = new ClientData();
+                while (scName.hasNext()){
+                    name = scName.next();
 
-            // ajout des dépendances
-            ifConsole.setClientService(clientService);
-            clientService.setClientData(clientData);
+                    listClass.add( name);
+                }
 
-            // lancement de l'application
-            ifConsole.createInterfaceControl();
+            } catch (IOException io) {
+                System.out.println("Error IO exception" + io.getMessage() + io.getCause().toString());
 
-        } else if (choix == 2) {
-            IfGraphique ifGraphique = new IfGraphique();
-            ClientServicedefault clientService = new ClientServicedefault();
-            ClientDataAdvence clientDataAdvence = new ClientDataAdvence();
+            } catch (Exception ex) {
+                System.out.println("Error Exception Scanner classe :" + ex.getMessage() + ex.getCause().toString());
+            }
 
-            // ajout des dépendances
-            clientService.setClientData(clientDataAdvence);
-            ifGraphique.setClientService(clientService);
+        IController iController = null;
+        IClientService iClientService = null;
+        IClientData iClientData = null;
+        try {
+            iController = (IController) Class.forName(listClass.get(0)).
+                    getDeclaredConstructor().
+                    newInstance();
+            iClientService = (IClientService) Class.forName(listClass.get(1)).
+                    getDeclaredConstructor().
+                    newInstance();
+            iClientData = (IClientData) Class.forName(listClass.get(2)).
+                    getDeclaredConstructor().
+                    newInstance();
+        } catch (ClassNotFoundException clex) {
+            System.out.println(clex.getException() + clex.getMessage() + clex.getCause().toString());
 
-            // lancement
-            ifGraphique.createInterfaceControl();
-
+        } catch (Exception ex) {
+            System.out.println("Error Exception IOC :" + ex.getMessage() + ex.getCause().toString());
         }
 
+        iController.setClientService(iClientService);
+        iClientService.setClientData(iClientData);
+
+        iController.createInterfaceControl();
 
     }
 }

@@ -5,6 +5,10 @@ import com.project.myProduit.service.IClientService;
 
 import java.util.Scanner;
 
+/**
+ * Cette classe permet le controle de l'application avec
+ * la console
+ */
 public class IfConsole implements IController {
 
     IClientService clientService ;

@@ -2,6 +2,9 @@ package com.project.myProduit.controller;
 
 import com.project.myProduit.service.IClientService;
 
+/**
+ * Cette permet le controle de l'application avec un navigateur
+ */
 public class IfGraphique {
 
     IClientService clientService ;
