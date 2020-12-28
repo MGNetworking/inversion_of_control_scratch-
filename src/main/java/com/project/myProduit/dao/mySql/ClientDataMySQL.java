@@ -1,6 +1,8 @@
-package com.project.myProduit.dao;
+package com.project.myProduit.dao.mySql;
 
+import com.project.myProduit.dao.IClientData;
 import com.project.myProduit.metierEntity.Client;
+import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.util.ArrayList;
@@ -11,6 +13,7 @@ import java.util.List;
  * Biensur il faudrais implementer la connection a la base de donner
  * Mais cette exemple reste volontairment primitif
  */
+@Repository
 public class ClientDataMySQL implements IClientData {
 
     private static List<Client> clientList = new ArrayList<>();

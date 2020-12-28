@@ -1,14 +1,17 @@
-package com.project.myProduit.service;
+package com.project.myProduit.service.defaut;
 
 import com.project.myProduit.dao.IClientData;
 import com.project.myProduit.metierEntity.Client;
+import com.project.myProduit.service.IClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
 /**
- * Cette classe permet la gestion de numéro de facture avec prefix
+ * Cette permet la gestion de la creation des facture sans prefix
  */
-public class ClientServicePrefix implements IClientService {
+@Service
+public class ClientServiceDefault implements IClientService {
 
     @Autowired
     private IClientData clientData;
@@ -16,12 +19,9 @@ public class ClientServicePrefix implements IClientService {
     // numero de facture
     @Value("${service.countNumber}")
     private long countNumber ;
-    @Value("${service.prefix}")
-    private String prefix ;
-
 
     public void createfacture(Client client) {
-        client.setNumber(prefix+(++countNumber));
+        client.setNumber(String.valueOf(++countNumber));
         clientData.create(client);
     }
 
@@ -31,14 +31,6 @@ public class ClientServicePrefix implements IClientService {
 
     public void setCountNumber(long countNumber) {
         this.countNumber = countNumber;
-    }
-
-    public String getPrefix() {
-        return prefix;
-    }
-
-    public void setPrefix(String prefix) {
-        this.prefix = prefix;
     }
 
     public IClientData getClientData() {
